@@ -5,7 +5,13 @@ OpenCode configuration with Freebuff as a free AI coding provider.
 Freebuff (https://freebuff.com) is the free, ad-supported AI coding agent built on Codebuff.
 This config wires it into opencode via the [freebuff2api](https://github.com/XxxXTeam/freebuff2api) proxy.
 
-## Quick Start
+## One-Command Install
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/lovegold120221-dot/openbuff/main/bootstrap.sh)
+```
+
+## Quick Start (Manual)
 
 ```bash
 # 1. Clone and install the proxy
@@ -27,6 +33,8 @@ opencode
 
 | File | Purpose |
 |---|---|
+| `app.py.patch` | Patch for root-level proxy routes |
+| `bootstrap.sh` | One-command setup script |
 | `opencode.jsonc` | OpenCode config with Freebuff provider + Ctrl+V keybind |
 | `AGENTS.md` | Setup instructions loaded by opencode |
 | `.env.example` | Template for freebuff2api proxy config |
