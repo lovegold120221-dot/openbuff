@@ -1,0 +1,15 @@
+[Unit]
+Description=Freebuff2API - OpenAI-compatible proxy for Freebuff
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/path/to/freebuff2api
+ExecStart=/path/to/freebuff2api/.venv/bin/python main.py
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,16 @@
+--- a/freebuff2api/app.py
++++ b/freebuff2api/app.py
+@@ -98,11 +98,13 @@ async def healthz(request: Request) -> dict[str, Any]:
+     return {"status": "ok"}
+ 
+ 
++@app.get("/models")
+ @app.get("/v1/models")
+ async def list_models(request: Request) -> dict[str, Any]:
+     _check_local_auth(request)
+     return models_response()
+ 
+ 
++@app.post("/chat/completions")
+ @app.post("/v1/chat/completions")
+ async def chat_completions(request: Request) -> Any:
